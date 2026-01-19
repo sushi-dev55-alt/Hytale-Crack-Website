@@ -4,7 +4,7 @@ import React from 'react';
 import SynapseBackground from "@/components/ui/synapse-background";
 import GradientMenu from "@/components/ui/gradient-menu";
 import { DownloadButton } from "@/components/ui/download-button";
-import { HandWrittenTitle } from "@/components/ui/hand-writing-text";
+import ParticleText from "@/components/ui/particle-text-canvas";
 import { Globe } from "@/components/ui/globe";
 import { useRouter } from 'next/navigation';
 
@@ -30,7 +30,7 @@ export default function Home() {
       <section className="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-4 pt-10">
 
         {/* Floating Logo */}
-        <div className="mb-4 md:mb-8 animate-[float_6s_ease-in-out_infinite]">
+        <div className="mb-2 md:mb-4 animate-[float_6s_ease-in-out_infinite] relative z-30">
           <img
             src="https://hytale.com/static/images/logo.png"
             alt="Hytale Logo"
@@ -38,17 +38,27 @@ export default function Home() {
           />
         </div>
 
-        {/* Animated Title */}
-        <div className="mb-8 w-full relative z-20">
-          <HandWrittenTitle
-            title="HYTALE CRACKED IS AVAILABLE NOW!"
-            subtitle="Join the adventure today"
+        {/* Particle Text Title */}
+        <div className="w-full relative z-20 mb-4 h-[150px] md:h-[200px] flex flex-col items-center justify-center">
+          <ParticleText
+            text="HYTALE CRACKED"
+            className="w-full h-full absolute inset-0"
           />
+          <div className="relative z-10 pointer-events-none mt-20 md:mt-24">
+            <h2 className="text-xl md:text-3xl font-bold tracking-widest text-blue-200 animate-pulse drop-shadow-md">
+              IS AVAILABLE NOW!
+            </h2>
+          </div>
+        </div>
+
+        {/* CTA Button */}
+        <div className="relative z-30 mb-8 mt-4">
+          <DownloadButton onClick={() => router.push('/downloads')} />
         </div>
 
         {/* Globe Visualization + Stats Beside/Over */}
-        <div className="mb-4 w-full flex flex-col md:flex-row items-center justify-center gap-10">
-          <div className="w-full max-w-[400px] aspect-square relative">
+        <div className="w-full flex flex-col md:flex-row items-center justify-center gap-10">
+          <div className="w-full max-w-[400px] aspect-square relative opacity-90 transition-opacity hover:opacity-100">
             <Globe />
           </div>
           {/* Stats "Beside it" */}
@@ -60,11 +70,6 @@ export default function Home() {
               11+ <br /><span className="text-white text-2xl font-medium">Countries</span>
             </h3>
           </div>
-        </div>
-
-        {/* CTA Button */}
-        <div className="relative z-20 mb-12">
-          <DownloadButton onClick={() => router.push('/downloads')} />
         </div>
       </section>
 
