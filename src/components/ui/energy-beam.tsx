@@ -17,7 +17,7 @@ declare global {
 const EnergyBeam: React.FC<EnergyBeamProps> = ({
     projectId = "hRFfUymDGOHwtFe7evR2",
     className = "",
-    scale = 0.5,
+    scale = 0.8,
     dpi = 1.0,
     fps = 60
 }) => {
