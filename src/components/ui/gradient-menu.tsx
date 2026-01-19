@@ -16,7 +16,7 @@ export default function GradientMenu() {
                     <a key={idx} href={href}>
                         <li
                             style={{ '--gradient-from': gradientFrom, '--gradient-to': gradientTo } as React.CSSProperties}
-                            className="relative w-[60px] h-[60px] bg-white shadow-lg rounded-full flex items-center justify-center transition-all duration-500 hover:w-[150px] hover:shadow-none group cursor-pointer"
+                            className="relative w-[40px] h-[40px] bg-white shadow-lg rounded-full flex items-center justify-center transition-all duration-500 hover:w-[120px] hover:shadow-none group cursor-pointer"
                         >
                             {/* Gradient background on hover */}
                             <span className="absolute inset-0 rounded-full bg-[linear-gradient(45deg,var(--gradient-from),var(--gradient-to))] opacity-0 transition-all duration-500 group-hover:opacity-100"></span>

@@ -1,17 +1,22 @@
 "use client";
 
 import React from 'react';
-import { FloatingPaths } from "@/components/ui/background-paths";
+import SynapseBackground from "@/components/ui/synapse-background";
 import GradientMenu from "@/components/ui/gradient-menu";
-import { ShinyButton } from "@/components/ui/shiny-button";
+import { DownloadButton } from "@/components/ui/download-button";
+import { HandWrittenTitle } from "@/components/ui/hand-writing-text";
+import { Globe } from "@/components/ui/globe";
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden text-white font-sans selection:bg-purple-500/30 bg-neutral-950">
-      {/* Background Paths */}
+
+      {/* Background Wrapper */}
       <div className="fixed inset-0 z-0">
-        <FloatingPaths position={1} />
-        <FloatingPaths position={-1} />
+        <SynapseBackground />
       </div>
 
       {/* Navigation */}
@@ -22,26 +27,44 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-4">
+      <section className="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-4 pt-10">
+
         {/* Floating Logo */}
-        <div className="mb-8 animate-[float_6s_ease-in-out_infinite]">
+        <div className="mb-4 md:mb-8 animate-[float_6s_ease-in-out_infinite]">
           <img
             src="https://hytale.com/static/images/logo.png"
             alt="Hytale Logo"
-            className="w-64 md:w-80 lg:w-96 drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]"
+            className="w-48 md:w-64 lg:w-80 drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]"
           />
         </div>
 
-        {/* Main Text */}
-        <h1 className="text-3xl md:text-5xl font-serif font-bold tracking-wide mb-8 drop-shadow-lg uppercase text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">
-          HYTALE CRACKED IS AVAILABLE NOW!
-        </h1>
+        {/* Animated Title */}
+        <div className="mb-8 w-full relative z-20">
+          <HandWrittenTitle
+            title="HYTALE CRACKED IS AVAILABLE NOW!"
+            subtitle="Join the adventure today"
+          />
+        </div>
+
+        {/* Globe Visualization + Stats Beside/Over */}
+        <div className="mb-4 w-full flex flex-col md:flex-row items-center justify-center gap-10">
+          <div className="w-full max-w-[400px] aspect-square relative">
+            <Globe />
+          </div>
+          {/* Stats "Beside it" */}
+          <div className="hidden md:block text-left space-y-4">
+            <h3 className="text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500 animate-pulse">
+              500+ <br /><span className="text-white text-2xl font-medium">Downloads</span>
+            </h3>
+            <h3 className="text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500 animate-pulse delay-75">
+              11+ <br /><span className="text-white text-2xl font-medium">Countries</span>
+            </h3>
+          </div>
+        </div>
 
         {/* CTA Button */}
-        <div className="relative z-20">
-          <ShinyButton href="/downloads" className="text-white text-lg font-bold tracking-wide">
-            DOWNLOAD
-          </ShinyButton>
+        <div className="relative z-20 mb-12">
+          <DownloadButton onClick={() => router.push('/downloads')} />
         </div>
       </section>
 
