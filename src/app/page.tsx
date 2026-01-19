@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import SynapseBackground from "@/components/ui/synapse-background";
+import EnergyBeam from "@/components/ui/energy-beam";
 import GradientMenu from "@/components/ui/gradient-menu";
 import { DownloadButton } from "@/components/ui/download-button";
 import ParticleText from "@/components/ui/particle-text-canvas";
@@ -16,8 +16,8 @@ export default function Home() {
     <main className="relative min-h-screen w-full overflow-x-hidden text-white font-sans selection:bg-purple-500/30 bg-neutral-950">
 
       {/* Background Wrapper */}
-      <div className="fixed inset-0 z-0">
-        <SynapseBackground />
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <EnergyBeam className="w-full h-full opacity-60" />
       </div>
 
       {/* Navigation */}
