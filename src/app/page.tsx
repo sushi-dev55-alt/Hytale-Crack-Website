@@ -1,16 +1,17 @@
 "use client";
 
 import React from 'react';
-import AnoAI from "@/components/ui/animated-shader-background";
+import { FloatingPaths } from "@/components/ui/background-paths";
 import GradientMenu from "@/components/ui/gradient-menu";
 import { ShinyButton } from "@/components/ui/shiny-button";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen w-full overflow-x-hidden text-white font-sans selection:bg-purple-500/30">
-      {/* Background Shader */}
+    <main className="relative min-h-screen w-full overflow-x-hidden text-white font-sans selection:bg-purple-500/30 bg-neutral-950">
+      {/* Background Paths */}
       <div className="fixed inset-0 z-0">
-        <AnoAI />
+        <FloatingPaths position={1} />
+        <FloatingPaths position={-1} />
       </div>
 
       {/* Navigation */}
