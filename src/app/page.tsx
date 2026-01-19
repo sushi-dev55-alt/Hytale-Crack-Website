@@ -39,16 +39,11 @@ export default function Home() {
         </div>
 
         {/* Particle Text Title */}
-        <div className="w-full relative z-20 mb-4 h-[150px] md:h-[200px] flex flex-col items-center justify-center">
+        <div className="w-full relative z-20 mb-4 h-[150px] md:h-[250px] flex flex-col items-center justify-center">
           <ParticleText
-            text="HYTALE CRACKED"
+            text={`HYTALE CRACKED\nIS AVAILABLE NOW!`}
             className="w-full h-full absolute inset-0"
           />
-          <div className="relative z-10 pointer-events-none mt-20 md:mt-24">
-            <h2 className="text-xl md:text-3xl font-bold tracking-widest text-blue-200 animate-pulse drop-shadow-md">
-              IS AVAILABLE NOW!
-            </h2>
-          </div>
         </div>
 
         {/* CTA Button */}

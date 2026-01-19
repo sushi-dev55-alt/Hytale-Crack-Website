@@ -114,7 +114,13 @@ const ParticleText = ({ text = "HYTALE", className }: ParticleTextProps) => {
         function init() {
             if (!ctx || !canvas) return;
             particlesArray = [];
-            const fontSize = Math.min(80, canvas.width / (text.length * 0.7)); // Adaptive font size
+
+            const lines = text.split('\\n');
+            const longestLine = lines.reduce((a, b) => a.length > b.length ? a : b, "");
+            const fontSize = Math.min(80, canvas.width / (longestLine.length * 0.7)); // Adaptive
+            const lineHeight = fontSize * 1.2;
+            const totalHeight = lines.length * lineHeight;
+            const startY = (canvas.height - totalHeight) / 2 + lineHeight / 2;
 
             ctx.font = `bold ${fontSize}px "Arial Black", Gadget, sans-serif`;
             ctx.textAlign = 'center';
@@ -126,7 +132,9 @@ const ParticleText = ({ text = "HYTALE", className }: ParticleTextProps) => {
             gradient.addColorStop(0.8, "#61dafb");
             ctx.fillStyle = gradient;
 
-            ctx.fillText(text, canvas.width / 2, canvas.height / 2);
+            lines.forEach((line, i) => {
+                ctx.fillText(line, canvas.width / 2, startY + i * lineHeight);
+            });
 
             const textCoordinates = ctx.getImageData(0, 0, canvas.width, canvas.height);
             ctx.clearRect(0, 0, canvas.width, canvas.height);
