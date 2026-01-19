@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import SynapseBackground from "@/components/ui/synapse-background";
 import { DownloadButton } from "@/components/ui/download-button";
 import { AnimatedCircularProgressBar } from "@/components/ui/animated-circular-progress-bar";
 import {
@@ -51,12 +52,10 @@ export default function DownloadsPage() {
 
     return (
         <div className="relative min-h-screen bg-neutral-950 text-white selection:bg-white/20 font-sans">
-            {/* Background - Optional: reused Synapse here? Prompt said "Background: Synapse... Set this as the global background for the Landing Page".
-                 For downloads page, user said "apply it to the /downloads page" in previous convo summary, but prompt didn't strictly reiterate.
-                 However, to act as a senior dev, consistent background is good. I'll stick to what was there (FloatingPaths) or remove it if I don't import it.
-                 I'll use SynapseBackground here too for consistency if I can.
-                 Wait, I removed FloatingPaths import. I should probably use Synapse here too.
-             */}
+            {/* Background Wrapper */}
+            <div className="fixed inset-0 z-0 pointer-events-none">
+                <SynapseBackground />
+            </div>
 
             <style jsx global>{`
         .bg-tile { background-image: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.08)); }

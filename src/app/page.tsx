@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import SynapseBackground from "@/components/ui/synapse-background";
 import GradientMenu from "@/components/ui/gradient-menu";
 import { DownloadButton } from "@/components/ui/download-button";
@@ -10,6 +10,7 @@ import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const router = useRouter();
+  const [showLegacy, setShowLegacy] = useState(false);
 
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden text-white font-sans selection:bg-purple-500/30 bg-neutral-950">
@@ -102,6 +103,26 @@ export default function Home() {
           </div>
 
         </div>
+      </section>
+
+      {/* Load More / Legacy Content Section */}
+      <section className="relative z-10 py-10 text-center">
+        {!showLegacy ? (
+          <button
+            onClick={() => setShowLegacy(true)}
+            className="px-8 py-3 bg-white/10 hover:bg-white/20 text-white font-bold rounded-full transition-all duration-300 border border-white/10 backdrop-blur-md"
+          >
+            LOAD MORE
+          </button>
+        ) : (
+          <div className="w-full min-h-screen bg-[#15243a]">
+            <iframe
+              src="/hytale-game-frame.html"
+              className="w-full min-h-[150vh] border-none"
+              title="Legacy Hytale Content"
+            />
+          </div>
+        )}
       </section>
 
       {/* Footer */}
