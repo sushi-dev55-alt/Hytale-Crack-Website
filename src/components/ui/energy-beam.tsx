@@ -3,6 +3,9 @@ import React, { useEffect, useRef } from 'react';
 interface EnergyBeamProps {
     projectId?: string;
     className?: string;
+    scale?: number;
+    dpi?: number;
+    fps?: number;
 }
 
 declare global {
@@ -13,7 +16,10 @@ declare global {
 
 const EnergyBeam: React.FC<EnergyBeamProps> = ({
     projectId = "hRFfUymDGOHwtFe7evR2",
-    className = ""
+    className = "",
+    scale = 0.5,
+    dpi = 1.0,
+    fps = 60
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const scriptLoadedRef = useRef(false);
@@ -52,6 +58,9 @@ const EnergyBeam: React.FC<EnergyBeamProps> = ({
             <div
                 ref={containerRef}
                 data-us-project={projectId}
+                data-us-scale={scale}
+                data-us-dpi={dpi}
+                data-us-fps={fps}
                 className="w-full h-full"
             />
         </div>
