@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import SynapseBackground from "@/components/ui/synapse-background";
+import EnergyBeam from "@/components/ui/energy-beam";
 import { DownloadButton } from "@/components/ui/download-button";
 import { AnimatedCircularProgressBar } from "@/components/ui/animated-circular-progress-bar";
 import {
@@ -54,7 +54,7 @@ export default function DownloadsPage() {
         <div className="relative min-h-screen bg-neutral-950 text-white selection:bg-white/20 font-sans">
             {/* Background Wrapper */}
             <div className="fixed inset-0 z-0 pointer-events-none">
-                <SynapseBackground />
+                <EnergyBeam className="w-full h-full opacity-60" />
             </div>
 
             <style jsx global>{`
