@@ -20,7 +20,7 @@ export default function DownloadsPage() {
             ver: "1.0.0",
             file: "Hytale_Cracked_v1.0.0.zip",
             img: "https://hytale.com/static/images/logo.png",
-            downloadUrl: "#"
+            downloadUrl: "https://mega.nz/file/SpAR0AaK#cMZat9VcR8YSUlF7TWO42U_1cqHdPJcMPZHK8g17zGE"
         }
     };
 
