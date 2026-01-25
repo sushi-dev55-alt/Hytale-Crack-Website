@@ -44,7 +44,7 @@ export default function DownloadsPage() {
             if (progress >= 100) {
                 clearInterval(interval);
                 setTimeout(() => {
-                    window.open("https://mega.nz/file/n9R0hZ7R#rXX3wcq7FxN1XxFATP-6KbolmLwxV8tqQI4NCSIsQAs", "_blank");
+                    window.open("https://mega.nz/file/SpAR0AaK#cMZat9VcR8YSUlF7TWO42U_1cqHdPJcMPZHK8g17zGE", "_blank");
                 }, 1000);
             }
         }, 300);
